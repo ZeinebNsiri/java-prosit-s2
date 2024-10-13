@@ -1,7 +1,6 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
 
 public class ZooManagement {
     public static void main(String[] args) {
@@ -59,7 +58,25 @@ public class ZooManagement {
         Zoo bigger = Zoo.comparerZoo(myZoo, myZoo2);
         System.out.println(bigger);
 
+        Aquatique wale= new Aquatique("carnivor", "walii", 2, true, "oceon");
+        Terrestre rabbit= new Terrestre("carnivor", "rabbi", 2, true, 4);
+        Dolphin dof1= new Dolphin("carnivor", "dofii", 2, true, "oceon",600);
+        Penguin pen1= new Penguin("carnivor", "pene", 2, true, "oceon",400);
 
+        System.out.println(wale.toString());
+        System.out.println(rabbit.toString());
+        System.out.println(dof1.toString());
+        System.out.println(pen1.toString());
+
+
+        wale.swim();
+        dof1.swim(); //il a utilisé sa fonction swim pas de l'heritage de aquatique
+        pen1.swim();
+
+//        Aquatique wale = new Aquatique();
+//        Terrestre rabbit = new Terrestre();
+//        Dolphin dof1 = new Dolphin();
+//        Penguin pen1 = new Penguin();
 
 
 //        myZoo.displayZoo();
