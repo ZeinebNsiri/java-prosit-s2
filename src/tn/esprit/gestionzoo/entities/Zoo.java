@@ -54,15 +54,15 @@ public class Zoo {
         }
     }
 
-    @Override
-    public String toString() {
-        return "tn.esprit.gestionzoo.entities.Zoo{" +
-                "animals=" + Arrays.toString(animals) +
-                ", name='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", nbCages=" + nbCages +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "tn.esprit.gestionzoo.entities.Zoo{" +
+//                "animals=" + Arrays.toString(animals) +
+//                ", name='" + name + '\'' +
+//                ", city='" + city + '\'' +
+//                ", nbCages=" + nbCages +
+//                '}';
+//    }
 
     public boolean addAnimal(Animal animal){
         if (isZooFull() ){
@@ -136,7 +136,42 @@ public class Zoo {
         }
 
     }
+    Aquatique aquaticAnimals[] = new Aquatique[10];
+    int nbrAquatics;
+    public void addAquaticAnimal(Aquatique aquatic) {
+        aquaticAnimals[nbrAquatics] = aquatic;
+        nbrAquatics++;
+    }
 
+    @Override
+    public String toString() {
+        return "Zoo{" +
+                "aquaticAnimals=" + Arrays.toString(aquaticAnimals) +
+                '}';
+    }
 
+    public float maxPenguinSwimmingDepth() {
+        float maxDepth = 0f;
+        for (int i = 0; i < nbrAquatics; i++) {
+            if (aquaticAnimals[i] instanceof Penguin penguin) {
+                if (maxDepth < penguin.swimmingDepth)
+                    maxDepth = penguin.swimmingDepth;
+            }
+        }
+        return maxDepth;
+    }
 
+    public void displayNumberOfAquaticsByType() {
+        int nbrPenguins = 0;
+        int nbrDolphins = 0;
+        for (int i = 0; i < nbrAquatics; i++) {
+            if (aquaticAnimals[i] instanceof Dolphin) {
+                nbrDolphins++;
+            }
+            if (aquaticAnimals[i] instanceof Penguin) {
+                nbrPenguins++;
+            }
+        }
+        System.out.println("Le Zoo " + name + " contient " + nbrDolphins + " dauphins et " + nbrPenguins + " pingouins");
+    }
 }

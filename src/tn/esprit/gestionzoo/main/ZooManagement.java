@@ -58,20 +58,34 @@ public class ZooManagement {
         Zoo bigger = Zoo.comparerZoo(myZoo, myZoo2);
         System.out.println(bigger);
 
-        Aquatique wale= new Aquatique("carnivor", "walii", 2, true, "oceon");
+//        Aquatique wale= new Aquatique("carnivor", "walii", 2, true, "oceon");
+//        Aquatique wale2= new Aquatique("carnivor", "walii2", 2, true, "oceon");
+//        Aquatique wale3= new Aquatique("carnivor", "walii3", 2, true, "oceon");
         Terrestre rabbit= new Terrestre("carnivor", "rabbi", 2, true, 4);
         Dolphin dof1= new Dolphin("carnivor", "dofii", 2, true, "oceon",600);
         Penguin pen1= new Penguin("carnivor", "pene", 2, true, "oceon",400);
+        Penguin pen2= new Penguin("carnivor", "pene", 2, true, "oceon",300);
 
-        System.out.println(wale.toString());
+       // System.out.println(wale.toString());
         System.out.println(rabbit.toString());
         System.out.println(dof1.toString());
         System.out.println(pen1.toString());
 
 
-        wale.swim();
+       // wale.swim();
         dof1.swim(); //il a utilisé sa fonction swim pas de l'heritage de aquatique
         pen1.swim();
+
+        myZoo.addAquaticAnimal(dof1);
+        myZoo.addAquaticAnimal(pen1);
+        myZoo.addAquaticAnimal(pen2);
+
+        System.out.println(myZoo.toString());
+        System.out.println(myZoo.maxPenguinSwimmingDepth());
+        myZoo.displayNumberOfAquaticsByType();
+        boolean res = dof1.equals(pen2);
+        System.out.println(res);
+
 
 //        Aquatique wale = new Aquatique();
 //        Terrestre rabbit = new Terrestre();

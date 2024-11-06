@@ -20,6 +20,7 @@ public class Dolphin extends Aquatique{
                 ", isMammal=" + isMammal +
                 '}';
     }
+    @Override
     public void swim(){
         System.out.println("This dolphin is swimming. ");
     }
