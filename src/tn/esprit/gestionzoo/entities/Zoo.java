@@ -6,7 +6,7 @@ public class Zoo {
     private Animal[] animals ;
     private String name;
     private String city ;
-    private final static int nbCages=25;
+    private final static int nbCages=3;
 
     public Zoo(Animal[] animals, String name, String city) {
         this.animals = new Animal[nbCages];
@@ -64,22 +64,38 @@ public class Zoo {
 //                '}';
 //    }
 
-    public boolean addAnimal(Animal animal){
-        if (isZooFull() ){
-            return false;
+//    public boolean addAnimal(Animal animal){
+//        if (isZooFull() ){
+//            return false;
+//        }
+//        else {
+//            for (int i = 0; i < animals.length; i++) {
+//                if (animals[i] != null && animal.getName().equals(animals[i].getName())) {
+//                    return false;
+//                } else if (animals[i] == null) {
+//                    animals[i] = animal;
+//                    return true;
+//
+//                }
+//            }
+//        }
+//        return false;
+//    }
+
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException{
+        if (animal.getAge() < 0) {
+            throw new InvalidAgeException("L'âge de l'animal ne peut pas être négatif.");
         }
-        else {
-            for (int i = 0; i < animals.length; i++) {
+        for (int i = 0; i < animals.length; i++) {
                 if (animals[i] != null && animal.getName().equals(animals[i].getName())) {
-                    return false;
+                 System.out.println("animal already exists");
                 } else if (animals[i] == null) {
                     animals[i] = animal;
-                    return true;
-
+                    System.out.println("animal added");
                 }
             }
-        }
-        return false;
+        throw new ZooFullException("Le zoo est plein, impossible d'ajouter l'animal.");
+
     }
 
 
