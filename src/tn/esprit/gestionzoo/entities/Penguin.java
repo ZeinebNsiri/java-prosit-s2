@@ -24,4 +24,9 @@ public class Penguin extends Aquatique{
     public void swim() {
         System.out.println("A penguin is swimming");
     }
+
+    @Override
+    public void eatMeat(Food meat) {
+        System.out.println("A penguin eats meat");
+    }
 }

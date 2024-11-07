@@ -67,7 +67,7 @@ public class ZooManagement {
         Zoo bigger = Zoo.comparerZoo(myZoo, myZoo2);
         System.out.println(bigger);
 
-//        Aquatique wale= new Aquatique("carnivor", "walii", 2, true, "oceon");
+   //     Aquatique wale= new Aquatique("carnivor", "walii", 2, true, "oceon");
 //        Aquatique wale2= new Aquatique("carnivor", "walii2", 2, true, "oceon");
 //        Aquatique wale3= new Aquatique("carnivor", "walii3", 2, true, "oceon");
         Terrestre rabbit= new Terrestre("carnivor", "rabbi", 2, true, 4);
@@ -96,7 +96,11 @@ public class ZooManagement {
         System.out.println(res);
 
 
-//        Aquatique wale = new Aquatique();
+        dof1.eatMeat(Food.MEAT);
+        pen1.eatMeat(Food.MEAT);
+        rabbit.eatPlantAndMeet(Food.MEAT);
+
+//       Aquatique wale = new Aquatique();
 //        Terrestre rabbit = new Terrestre();
 //        Dolphin dof1 = new Dolphin();
 //        Penguin pen1 = new Penguin();

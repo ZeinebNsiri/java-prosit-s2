@@ -24,4 +24,10 @@ public class Dolphin extends Aquatique{
     public void swim(){
         System.out.println("This dolphin is swimming. ");
     }
+
+    @Override
+    public void eatMeat(Food meat) {
+        System.out.println("hello it works ");
+
+    }
 }
