@@ -99,6 +99,9 @@ public class ZooManagement {
         dof1.eatMeat(Food.MEAT);
         pen1.eatMeat(Food.MEAT);
         rabbit.eatPlantAndMeet(Food.MEAT);
+        rabbit.eatPlant(Food.MEAT);
+        rabbit.eatMeat(Food.MEAT);
+
 
 //       Aquatique wale = new Aquatique();
 //        Terrestre rabbit = new Terrestre();

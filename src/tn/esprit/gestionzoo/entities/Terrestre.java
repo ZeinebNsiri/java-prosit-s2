@@ -26,4 +26,14 @@ public class Terrestre extends Animal implements Omnivore<Food>{
     public void eatPlantAndMeet(Food food) {
         System.out.println(food);
     }
+
+    @Override
+    public void eatMeat(Object meat) {
+        System.out.println("does work");
+    }
+
+    @Override
+    public void eatPlant(Object plant) {
+        System.out.println("food");
+    }
 }
